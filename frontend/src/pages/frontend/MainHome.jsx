@@ -3,6 +3,7 @@ import HeroSection from "./components/main/HeroSection";
 import ServicesSection from "./components/main/ServicesSection";
 import AboutSection from "./components/main/AboutSection";
 import ProjectsSection from "./components/main/ProjectsSection";
+import ProductsSection from "./components/main/ProductsSection";
 import ContactSection from "./components/main/ContactSection";
 import Footer from "./components/main/Footer";
 import Navbar from "./components/main/Navbar";
@@ -20,14 +21,19 @@ const HomePage = () => {
         <ServicesSection />
       </div>
 
-      {/* About Section - White */}
-      <div className="bg-white">
-        <AboutSection />
+      {/* Projects Section - Muted Gray */}
+      <div className="bg-body-secondary">
+        <ProductsSection />
       </div>
 
       {/* Projects Section - Muted Gray */}
       <div className="bg-body-secondary">
         <ProjectsSection />
+      </div>
+
+      {/* About Section - White */}
+      <div className="bg-white">
+        <AboutSection />
       </div>
 
       {/* Contact Section - Light again */}
