@@ -33,7 +33,7 @@ function Login() {
       localStorage.setItem('token', data.token);
 
       // Redirect
-      navigate('/admin/dashboard');
+      navigate('/main/admin/dashboard');
 
     } catch (err) {
       console.error("Login error:", err);

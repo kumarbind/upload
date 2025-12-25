@@ -1,7 +1,5 @@
-// src/utils/api.js
 import axios from 'axios';
 
-// Create an axios instance
 const api = axios.create({
 //   baseURL: 'http://your-domain.com/api',
   baseURL: 'http://127.0.0.1:8000/api',
@@ -11,19 +9,26 @@ const api = axios.create({
   }
 });
 
-// ✅ You can add interceptors if you want (for auth, etc.)
-api.interceptors.response.use(
-  response => response,
-  error => {
-    // Handle global errors here (optional)
-    return Promise.reject(error);
-  }
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
 );
 
-// ✅ Common functions
 export const apiGet = async (url, params = {}) => {
   try {
     const response = await api.get(url, { params });
+    console.log('response',response);
+    
+    if (response.data?.message === "Unauthenticated.") {
+      localStorage.removeItem("token");
+      window.location.replace("/admin/login");
+    }
     return response.data;
   } catch (error) {
     throw error;
@@ -33,11 +38,15 @@ export const apiGet = async (url, params = {}) => {
 export const apiPost = async (url, data = {}) => {
   try {
     const response = await api.post(url, data);
+    console.log('response',response);
+    if (response.data?.message === "Unauthenticated.") {
+      localStorage.removeItem("token");
+      window.location.replace("/admin/login");
+    }
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-// You can add PUT, DELETE, etc., in similar way
 export default api;
