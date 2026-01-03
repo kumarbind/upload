@@ -28,6 +28,9 @@ Route::prefix('main')->group(function () {
             Route::get('/campaigns', [CampaignController::class, 'index']);
             Route::get('/campaigns/{campaign}', [CampaignController::class, 'show']);
             Route::post('/campaigns', [CampaignController::class, 'store']);
+
+            //Leads
+            Route::get('/leads', [LeadController::class, 'index']);
         });
     });
 });

@@ -83,9 +83,17 @@ const UserList = () => {
                   ID {sortField === "id" && (sortOrder === "asc" ? "▲" : "▼")}
                 </th>
                 <th onClick={() => handleSort("name")} style={{ cursor: "pointer" }}>
+                  Title {sortField === "name" && (sortOrder === "asc" ? "▲" : "▼")}
+                </th>
+                <th onClick={() => handleSort("name")} style={{ cursor: "pointer" }}>
                   Name {sortField === "name" && (sortOrder === "asc" ? "▲" : "▼")}
                 </th>
-                <th>Email</th>
+                <th onClick={() => handleSort("name")} style={{ cursor: "pointer" }}>
+                  Phone {sortField === "name" && (sortOrder === "asc" ? "▲" : "▼")}
+                </th>
+                <th>Email(Sent/Received)</th>
+                <th>Message</th>
+                <th>Received Date</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -102,10 +110,23 @@ const UserList = () => {
                   <tr key={u.id}>
                     <td>{u.id}</td>
                     <td>{u.name}</td>
+                    <td>{u.name}</td>
+                    <td>{u.phone}</td>
                     <td>{u.email}</td>
-                    <td>
+                    <td>{u.message}</td>
+                    <td>{u.created_at}</td>
+                    <td className="d-flex">
                       <button className="btn btn-sm btn-primary">
                         Edit
+                      </button>
+                      <button className="btn btn-sm btn-primary m-2">
+                        View
+                      </button>
+                      <button className="btn btn-sm btn-info m-2">
+                        Change status
+                      </button>
+                      <button className="btn btn-sm btn-danger">
+                        delete
                       </button>
                     </td>
                   </tr>

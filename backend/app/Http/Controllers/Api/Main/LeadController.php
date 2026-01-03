@@ -9,9 +9,26 @@ use Illuminate\Validation\ValidationException;
 
 class LeadController extends Controller
 {
-    public function index()
-    {
-        return Lead::all();
+    public function index(Request $request){
+        $query = Lead::query();
+        if ($request->search) {
+            $query->where(function ($q) use ($request) {
+                $q->where('name', 'LIKE', "%{$request->search}%")
+                  ->orWhere('email', 'LIKE', "%{$request->search}%");
+            });
+        }
+        $sortField = $request->sort_field ?? 'id';
+        $sortOrder = $request->sort_order ?? 'asc';
+        $query->orderBy($sortField, $sortOrder);
+        $perPage = $request->per_page ?? 10;
+        $users = $query->paginate($perPage);
+        return response()->json([
+            "success" => true,
+            "data" => $users->items(),
+            "total" => $users->total(),
+            "page" => $users->currentPage(),
+            "per_page" => $users->perPage()
+        ]);
     }
 
     public function store(Request $request){
