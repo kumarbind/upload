@@ -31,7 +31,7 @@ export default function AdminHomePageRoutes() {
       {/* <Route path="/myDashboard" element={<MyDashboard />} /> */}
       <Route path="/portfolio" element={<PortfolioHome />} />
       {/* <Route path="/details/:id?" element={<Details />} /> */}
-      <Route path="*" element={<HomePage />} />
+      <Route path="*" element={null} />
     </Routes>
   );
 }

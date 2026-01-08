@@ -9,7 +9,7 @@ function AboutSection() {
         <div className="row align-items-center">
           <div className="col-md-6">
             <p className="lead">
-              We are a creative team of web developers and designers led by <strong>Sandip Kumar</strong>, bringing over 7 years of industry experience to help businesses go digital with confidence.
+              We are a creative team of web developers and designers led by <strong>WebDevCreatrs Developrs</strong>, bringing over 7 years of industry experience to help businesses go digital with confidence.
             </p>
             <p>
               Our mission is to build powerful, responsive, and user-friendly web applications that not only look great but also solve real business problems. From sleek landing pages to complex dashboards and scalable APIs — we craft solutions that grow with you.

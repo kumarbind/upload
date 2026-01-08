@@ -8,6 +8,7 @@ import {
   FaSignOutAlt,
   FaChevronDown,
   FaChevronRight,
+  FaGlobe
 } from "react-icons/fa";
 
 const Sidebar = () => {
@@ -16,6 +17,8 @@ const Sidebar = () => {
   const [openMenu, setOpenMenu] = useState({
     users: false,
     leads: false,
+    campaigns: false,
+    sites: false,
     settings: false,
   });
 
@@ -28,10 +31,15 @@ const Sidebar = () => {
 
   const isActive = (path) => location.pathname.startsWith(path);
 
+  const menuClass = (active) =>
+    `nav-link d-flex justify-content-between align-items-center rounded px-3 py-2 text-white sidebar-item ${
+      active ? "bg-primary" : ""
+    }`;
+
   return (
     <div
       className="bg-dark text-white d-flex flex-column vh-100 position-sticky top-0"
-      style={{ width: "200px" }}
+      style={{ width: "230px" }}
     >
       {/* Logo */}
       <div className="p-4 border-bottom text-center">
@@ -60,10 +68,7 @@ const Sidebar = () => {
         <li className="nav-item mb-2">
           <div
             onClick={() => toggleMenu("users")}
-            className={`nav-link d-flex justify-content-between align-items-center rounded px-3 py-2 text-white cursor-pointer ${
-              isActive("/main/admin/users") ? "bg-primary" : ""
-            }`}
-            style={{ cursor: "pointer" }}
+            className={menuClass(isActive("/main/admin/users"))}
           >
             <span className="d-flex align-items-center gap-3">
               <FaUsers />
@@ -73,22 +78,14 @@ const Sidebar = () => {
           </div>
 
           {openMenu.users && (
-            <ul className="nav flex-column ms-4 mt-2">
-              <li className="nav-item mb-1">
-                <Link
-                  to="/main/admin/users"
-                  className={`nav-link text-white small ${
-                    location.pathname === "/main/admin/users" ? "text-primary" : ""
-                  }`}
-                >
+            <ul className="nav flex-column ms-4 mt-2 submenu">
+              <li className="nav-item">
+                <Link to="/main/admin/users" className="nav-link text-white small">
                   User List
                 </Link>
               </li>
-              <li className="nav-item mb-1">
-                <Link
-                  to="/main/admin/users/create"
-                  className="nav-link text-white small"
-                >
+              <li className="nav-item">
+                <Link to="/main/admin/users/create" className="nav-link text-white small">
                   Add User
                 </Link>
               </li>
@@ -100,10 +97,7 @@ const Sidebar = () => {
         <li className="nav-item mb-2">
           <div
             onClick={() => toggleMenu("leads")}
-            className={`nav-link d-flex justify-content-between align-items-center rounded px-3 py-2 text-white ${
-              isActive("/main/admin/leads") ? "bg-primary" : ""
-            }`}
-            style={{ cursor: "pointer" }}
+            className={menuClass(isActive("/main/admin/leads"))}
           >
             <span className="d-flex align-items-center gap-3">
               <FaShoppingCart />
@@ -113,22 +107,14 @@ const Sidebar = () => {
           </div>
 
           {openMenu.leads && (
-            <ul className="nav flex-column ms-4 mt-2">
-              <li className="nav-item mb-1">
-                <Link
-                  to="/main/admin/leads"
-                  className={`nav-link text-white small ${
-                    location.pathname === "/main/admin/leads" ? "text-primary" : ""
-                  }`}
-                >
+            <ul className="nav flex-column ms-4 mt-2 submenu">
+              <li className="nav-item">
+                <Link to="/main/admin/leads" className="nav-link text-white small">
                   All Leads
                 </Link>
               </li>
-              <li className="nav-item mb-1">
-                <Link
-                  to="/main/admin/leads/new"
-                  className="nav-link text-white small"
-                >
+              <li className="nav-item">
+                <Link to="/main/admin/leads/new" className="nav-link text-white small">
                   New Lead
                 </Link>
               </li>
@@ -136,40 +122,58 @@ const Sidebar = () => {
           )}
         </li>
 
-         {/* Campains */}
+        {/* CAMPAIGNS */}
         <li className="nav-item mb-2">
           <div
-            onClick={() => toggleMenu("Campains")}
-            className={`nav-link d-flex justify-content-between align-items-center rounded px-3 py-2 text-white ${
-              isActive("/main/admin/campaigns") ? "bg-primary" : ""
-            }`}
-            style={{ cursor: "pointer" }}
+            onClick={() => toggleMenu("campaigns")}
+            className={menuClass(isActive("/main/admin/campaigns"))}
           >
             <span className="d-flex align-items-center gap-3">
               <FaShoppingCart />
-              Campains
+              Campaigns
             </span>
-            {openMenu.Campains ? <FaChevronDown /> : <FaChevronRight />}
+            {openMenu.campaigns ? <FaChevronDown /> : <FaChevronRight />}
           </div>
 
-          {openMenu.Campains && (
-            <ul className="nav flex-column ms-4 mt-2">
-              <li className="nav-item mb-1">
-                <Link
-                  to="/main/admin/campaigns"
-                  className={`nav-link text-white small ${
-                    location.pathname === "/main/admin/campaigns" ? "text-primary" : ""
-                  }`}
-                >
-                  All Campains
+          {openMenu.campaigns && (
+            <ul className="nav flex-column ms-4 mt-2 submenu">
+              <li className="nav-item">
+                <Link to="/main/admin/campaigns" className="nav-link text-white small">
+                  All Campaigns
                 </Link>
               </li>
-              <li className="nav-item mb-1">
-                <Link
-                  to="/main/admin/campaigns/create"
-                  className="nav-link text-white small"
-                >
-                  New Campain
+              <li className="nav-item">
+                <Link to="/main/admin/campaigns/create" className="nav-link text-white small">
+                  New Campaign
+                </Link>
+              </li>
+            </ul>
+          )}
+        </li>
+
+        {/* SITES */}
+        <li className="nav-item mb-2">
+          <div
+            onClick={() => toggleMenu("sites")}
+            className={menuClass(isActive("/main/admin/sites"))}
+          >
+            <span className="d-flex align-items-center gap-3">
+              <FaGlobe />
+              Sites
+            </span>
+            {openMenu.sites ? <FaChevronDown /> : <FaChevronRight />}
+          </div>
+
+          {openMenu.sites && (
+            <ul className="nav flex-column ms-4 mt-2 submenu">
+              <li className="nav-item">
+                <Link to="/main/admin/sites" className="nav-link text-white small">
+                  All Sites
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/main/admin/templates" className="nav-link text-white small">
+                  Templates
                 </Link>
               </li>
             </ul>
@@ -180,10 +184,7 @@ const Sidebar = () => {
         <li className="nav-item mb-2">
           <div
             onClick={() => toggleMenu("settings")}
-            className={`nav-link d-flex justify-content-between align-items-center rounded px-3 py-2 text-white ${
-              isActive("/main/admin/settings") ? "bg-primary" : ""
-            }`}
-            style={{ cursor: "pointer" }}
+            className={menuClass(isActive("/main/admin/settings"))}
           >
             <span className="d-flex align-items-center gap-3">
               <FaCog />
@@ -193,20 +194,14 @@ const Sidebar = () => {
           </div>
 
           {openMenu.settings && (
-            <ul className="nav flex-column ms-4 mt-2">
-              <li className="nav-item mb-1">
-                <Link
-                  to="/main/admin/settings/profile"
-                  className="nav-link text-white small"
-                >
+            <ul className="nav flex-column ms-4 mt-2 submenu">
+              <li className="nav-item">
+                <Link to="/main/admin/settings/profile" className="nav-link text-white small">
                   Profile
                 </Link>
               </li>
-              <li className="nav-item mb-1">
-                <Link
-                  to="/main/admin/settings/security"
-                  className="nav-link text-white small"
-                >
+              <li className="nav-item">
+                <Link to="/main/admin/settings/security" className="nav-link text-white small">
                   Security
                 </Link>
               </li>

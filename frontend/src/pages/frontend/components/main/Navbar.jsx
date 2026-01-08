@@ -39,8 +39,11 @@ function Navbar() {
   const products = [
     { icon: <FaUsers />, name: "CRM System", href: "/products/crm", color: "#f59e0b" },
     { icon: <FaCog />, name: "ERP Solution", href: "/products/erp", color: "#ec4899" },
-    { icon: <FaShoppingCart />, name: "E-commerce", href: "/products/ecommerce", color: "#06b6d4" }
-    
+    { icon: <FaShoppingCart />, name: "E-commerce", href: "/products/ecommerce", color: "#06b6d4" },
+    { icon: <FaShoppingCart />, name: "Admin Dashboard", href: "/products/ecommerce", color: "#06b6d4" },
+    { icon: <FaShoppingCart />, name: "Blogs", href: "/products/ecommerce", color: "#06b6d4" },
+    { icon: <FaShoppingCart />, name: "Postst", href: "/products/ecommerce", color: "#06b6d4" },
+    { icon: <FaShoppingCart />, name: "Booking System", href: "/products/ecommerce", color: "#06b6d4" },
   ];
 
   return (

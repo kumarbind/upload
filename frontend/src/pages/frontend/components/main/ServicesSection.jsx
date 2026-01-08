@@ -16,58 +16,22 @@ const AnimatedIcon = ({ children }) => (
 
 const services = [
   {
-    title: "RCM with Lead",
+    title: "Web/App Development",
     description: "Personal or business portfolios with modern layouts, animations, downloadable resume, contact forms, and social links.",
     icon: <FaUser size={36} className="mb-3 text-warning" />,
     link: "/rcm-lead"
   },
   {
-    title: "E-Commerce",
+    title: "Lead Generation Sites",
     description: "Online stores with cart, payment gateway, inventory, order tracking, and responsive UI to boost sales.",
     icon: <FaShoppingCart size={36} className="mb-3 text-primary" />,
     link: "/ecommerce-development"
   },
   {
-    title: "Travel Booking Platforms",
+    title: "Admission & Booking Systems",
     description: "Booking systems for flights, hotels, buses, and cabs with payment integration and admin dashboards.",
     icon: <FaPlane size={36} className="mb-3 text-success" />,
     link: "/travel-solutions"
-  },
-  {
-    title: "Blog Systems",
-    description: "SEO-optimized blogs with WYSIWYG editor, image upload, categories, tags, search and comments system.",
-    icon: <FaPenNib size={36} className="mb-3 text-danger" />,
-    link: "/blog-systems"
-  },
-  {
-    title: "Portfolio Sites",
-    description: "Modern portfolio websites with animations, resume download, contact form, and social media integration.",
-    icon: <FaUser size={36} className="mb-3 text-warning" />,
-    link: "/portfolio-sites"
-  },
-  {
-    title: "Admin Panels",
-    description: "React + Laravel dashboards with charts, analytics, roles, permissions and advanced UI components.",
-    icon: <FaChartBar size={36} className="mb-3 text-info" />,
-    link: "/admin-panel"
-  },
-  {
-    title: "ERP Development",
-    description: "Systems for HR, sales, CRM, finance with reports, automation and scalable architecture.",
-    icon: <FaDatabase size={36} className="mb-3 text-secondary" />,
-    link: "/erp-development"
-  },
-  {
-    title: "LMS Development",
-    description: "Learning platforms with courses, quizzes, student tracking, payments and certificates.",
-    icon: <FaGraduationCap size={36} className="mb-3 text-primary" />,
-    link: "/lms-development"
-  },
-  {
-    title: "App Campaigning",
-    description: "Growth marketing, user acquisition, landing pages, analytics setup and campaign management.",
-    icon: <FaBullhorn size={36} className="mb-3 text-danger" />,
-    link: "/app-campaigning"
   }
 ];
 

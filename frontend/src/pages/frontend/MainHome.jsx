@@ -12,16 +12,10 @@ const HomePage = () => {
   return (
     <div>
       <Navbar />
-
-      {/* Hero: already has background image and overlay */}
       <HeroSection />
-
-      {/* Services Section - Light Background */}
       <div className="bg-light">
         <ServicesSection />
       </div>
-
-      {/* Projects Section - Muted Gray */}
       <div className="bg-body-secondary">
         <ProductsSection />
       </div>

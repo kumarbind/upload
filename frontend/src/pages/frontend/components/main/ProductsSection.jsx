@@ -17,7 +17,7 @@ const cardVariants = {
 
 const services = [
   {
-    title: "RCM with Lead",
+    title: "Web/App Development",
     description:
       "Personal or business portfolios with animations, resume download, contact forms, and social media links.",
     image:
@@ -25,45 +25,13 @@ const services = [
     link: "/rcm",
   },
   {
-    title: "E-Commerce",
+    title: "Lead Generation Sites",
     description:
       "Online stores with cart, payments, order tracking, inventory and visually stunning responsive UI.",
     image:
       "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?fit=crop&w=600&q=80",
     link: "/ecommerce",
-  },
-  {
-    title: "Travel Booking Platforms",
-    description:
-      "Flight, bus, cab & hotel booking systems with real-time availability, payments & admin dashboards.",
-    image:
-      "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?fit=crop&w=600&q=80",
-    link: "/travel",
-  },
-  {
-    title: "Win With Own Knowledge",
-    description:
-      "Blog sites with WYSIWYG editors, SEO optimization, image uploads, categories, tags & comments.",
-    image:
-      "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?fit=crop&w=600&q=80",
-    link: "/knowledge",
-  },
-  {
-    title: "Portfolio Sites",
-    description:
-      "Stylish portfolio websites with modern layouts, Framer Motion animations & downloadable resume.",
-    image:
-      "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?fit=crop&w=600&q=80",
-    link: "/portfolio",
-  },
-  {
-    title: "Admin Panels",
-    description:
-      "React + Laravel admin dashboards with charts, tables, roles, permissions & analytics.",
-    image:
-      "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?fit=crop&w=600&q=80",
-    link: "/admin-panels",
-  },
+  }
 ];
 
 const ProductsSection = () => {

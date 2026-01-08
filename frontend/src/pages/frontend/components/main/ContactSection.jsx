@@ -63,7 +63,7 @@ function ContactSection() {
           <div className="col-md-6">
             <div className="mb-3">
               <p className="lead">
-                We’re a creative team of web developers and designers led by <strong>Sandip Kumar</strong>, ready to help you bring your ideas to life.
+                We’re a creative team of web developers and designers led by <strong>WebDevCreatrs Developrs</strong>, ready to help you bring your ideas to life.
               </p>
               <p>
                 Whether you need a landing page, e-commerce site, or a full-scale dashboard, we build modern, responsive, and scalable solutions tailored to your vision.
